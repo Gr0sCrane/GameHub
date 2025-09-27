@@ -5,5 +5,6 @@ int main()
 {
     BoardT board;
     board.displayTtt();
+    board.checkResult();
     return 0;
 }
