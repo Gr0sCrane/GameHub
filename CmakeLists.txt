@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.10)
+project(GameHub)
+
+set(CMAKE_CXX_STANDARD 20)
+
+file(GLOB_RECURSE SOURCES src/*.cpp)
+
+add_executable(GameHub ${SOURCES})
+
+if(MSVC)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
