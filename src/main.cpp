@@ -1,6 +1,9 @@
 #include <iostream>
+#include "Ttt/ticktack.h"
 
 int main()
 {
-    std::cout << "Hello Sekai"<<"\n";
+    BoardT board;
+    board.displayTtt();
+    return 0;
 }
