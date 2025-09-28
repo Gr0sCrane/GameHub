@@ -4,9 +4,8 @@
 int main()
 {   
     BoardT board;
-    board.displayTtt();
-    board.checkResult();
     auto icon = iconChoice();
     place(board,Turn::PLAYER,icon);
+    board.displayTtt();
     return 0;
 }
