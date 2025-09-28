@@ -40,3 +40,4 @@ char iconChoice();
 
 void initTtt();
 
+void title();

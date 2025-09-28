@@ -4,6 +4,8 @@
 BoardT::BoardT(){}
 
 void BoardT::displayTtt(){
+
+    std::cout<<"\n";
     std::cout << "   1   2   3\n";
     for (int i = 0; i < 3; i++) {
         std::cout << i + 1 << "  ";
@@ -76,18 +78,39 @@ int choice(Turn turn,BoardT &board) {
 char iconChoice(){
 
     char icon;
-    std::cout << "Choose between X and O to begin with: ";
+    std::cout << "> ";
     std::cin >> icon;
 
-        while (std::cin.fail() || (icon != 'X' && icon != 'O')) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Incorrect, enter X or O"<<"\n";
-            std::cin >> icon;
-        }
+    /*DEBUG*/
+    std::cout<<"TEST"<<"\n";
+
+    while (icon != 'X' && icon != 'O') {
+        std::cout<<"TEST"<<"\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Incorrect, enter X or O"<<"\n";
+        std::cout<<"> ";
+        std::cin >> icon;
+    }
     return icon;
 }
 
 void initTtt(){
+    BoardT board;
+
+    title();
+    board.displayTtt();
+    
+    auto icon = iconChoice();
+    place(board,Turn::PLAYER,icon);
+    board.displayTtt();
+}
+
+void title(){
+    std::cout<<"\n";
+    std::cout<<"|==============[Tic Tac Toe]==============|"<<"\n";
+    std::cout<< ">> Please choose between X or O to begin with <<" << "\n";
+    std::cout<< "Game board: " << "\n";
+    std::cout<<"\n";
 }
 

@@ -3,9 +3,6 @@
 
 int main()
 {   
-    BoardT board;
-    auto icon = iconChoice();
-    place(board,Turn::PLAYER,icon);
-    board.displayTtt();
+    initTtt();
     return 0;
 }
