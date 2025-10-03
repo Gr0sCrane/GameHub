@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <limits>
+#include <ctime>
+#include <cstdlib>
+#include <random>
 
 enum Turn {
     PLAYER,
@@ -19,10 +22,7 @@ private:
     
 public:
 
-    char board[9] = {' ',' ',' ',
-                     ' ',' ',' ',
-                     ' ',' ',' '};
-
+    char board[9];
     BoardT();
     ~BoardT() = default;
     
@@ -35,8 +35,7 @@ int choice(Turn turn,BoardT &board);
 
 void place(BoardT &board, Turn turn,char icon);
 
-
-char iconChoice();
+int randomInt(BoardT &board);
 
 void initTtt();
 
