@@ -5,7 +5,7 @@ struct Position2 {
     int x,y;
 };
 
-enum BoatType {
+enum class BoatType {
     SQUARE,
     LONG,
     SHORT

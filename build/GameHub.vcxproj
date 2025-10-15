@@ -324,6 +324,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GameHub\src\NavalBattle\board.cpp" />
+    <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GameHub\src\NavalBattle\boat.cpp" />
     <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GameHub\src\Ttt\ticktack.cpp" />
     <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GameHub\src\main.cpp" />
   </ItemGroup>
