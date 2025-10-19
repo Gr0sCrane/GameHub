@@ -1,17 +1,68 @@
 #include <iostream>
 #include "boat.h"
 
-Boat::Boat(){
+Boat::Boat(BoatType type, Direction dir){};
+
+BoatSquare::BoatSquare(BoatType type, Direction dir) : Boat::Boat(type,dir) {
+
+    Position2 base = {0,0};
+
+    m_positions[0] = base;
+    m_positions[1] = {base.x + 1, base.y};
+    m_positions[2] = {base.x, base.y + 1};
+    m_positions[3] = {base.x + 1, base.y + 1};
+
+};
+
+BoatLarge::BoatLarge(BoatType type, Direction dir) : Boat::Boat(type,dir){
+
+    Position2 base = {0,0};
+
+    switch(dir){
+        case Direction::DOWN:
+
+            m_positions[0] = base;
+            m_positions[1] = {base.x + 1, base.y};
+            m_positions[2] = {base.x, base.y + 1};
+            m_positions[3] = {base.x + 1, base.y + 1};
+            m_positions[4] = {base.x, base.y + 2};
+            m_positions[5] = {base.x + 1, base.y + 2};
+
+        case Direction::UP:
+            m_positions[0] = base;
+            m_positions[1] = {base.x + 1, base.y - 1};
+            m_positions[2] = {base.x, base.y - 1};
+            m_positions[3] = {base.x + 1, base.y - 1};
+            m_positions[4] = {base.x, base.y - 2};
+            m_positions[5] = {base.x + 1, base.y - 2};
+
+        case Direction::LEFT:
+            m_positions[0] = base;
+            m_positions[1] = {base.x, base.y + 1};
+            m_positions[2] = {base.x + 1, base.y};
+            m_positions[3] = {base.x + 1, base.y + 1};
+            m_positions[4] = {base.x + 2, base.y};
+            m_positions[5] = {base.x + 2, base.y + 2};
+
+        case Direction::RIGHT:
+            m_positions[0] = base;
+            m_positions[1] = {base.x, base.y + 1};
+            m_positions[2] = {base.x - 1, base.y};
+            m_positions[3] = {base.x - 1, base.y + 1};
+            m_positions[4] = {base.x - 2, base.y};
+            m_positions[5] = {base.x - 2, base.y + 2};
+            
+        default:
+            throw std::invalid_argument("The direction is incorrect");
+    };
 
 }
+
 
 Position2 Boat::getPosition() const {
-    return m_position;
+    
 }
 
-void Boat::setPosition(Position2 newPos){
-    m_position = newPos;
-}
 
 BoatType Boat::getType() const {
     return m_type;
